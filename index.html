@@ -50,6 +50,7 @@ Link: <a href="https://data.cityofnewyork.us/view/ba8s-jw6u">https://data.cityof
 <a id="other-data-sets" class="anchor" href="#other-data-sets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Data Sets</h3>
 
 <p><a href="https://data.cityofnewyork.us/view/gn7m-em8n">2014 DataSset</a><br>
+
 <a href="http://chriswhong.com/wp-content/uploads/2014/06/nycTaxiTripData2013.torrent">2013 Trip Dataset</a><br>
 <a href="http://chriswhong.com/wp-content/uploads/2014/06/nycTaxiFareData2013.torrent">2013 Fare Dataset</a>  </p>
 
@@ -75,31 +76,55 @@ Link: <a href="https://data.cityofnewyork.us/view/ba8s-jw6u">https://data.cityof
 
 <p>For calculating busiest area of New York we have calculated pickup and drop-off location counts by rounding latitude and longitude to 3 decimal points. What about the precision of the location? What is the distance between the two rounded points? - answer of which, is not general for all the locations on the earth. General New York latitude and longitude is 40.XXXXX and -73.XXXXX/-74.XXXXX. Now as per the <a href="https://en.wikipedia.org/wiki/Decimal_degrees">wikipedia</a> distance between two decimal points, we round it based on 45N/S shown below. We have rounded latitude and longitude by three decimal points in pickup and drop-off locations, so the distance between the two points will be approximately 80 m.  </p>
 
-<p><a href="https://www.googledrive.com/host/0B3OrYOq1dVQxcjJPOW1BWnFsYzQ/PickupLocation.html">Top Pickup Location</a><br>
-<a href="https://www.googledrive.com/host/0B3OrYOq1dVQxcjJPOW1BWnFsYzQ/DropoffLocation.html">Top Dropoff Location</a>  </p>
+<p>
+<table width="100%" border="0">
+<tr>
+<td width = "100%">
+<iframe src="https://www.googledrive.com/host/0B3OrYOq1dVQxcjJPOW1BWnFsYzQ/PickupLocation.html" style="border:none"  height="500px" width="100%"></iframe>
+</td> 
+</tr>
+<tr>
+<td>
+<div align = "center"> Top Pick up Location</div>
+</td>
+</tr>
+</table>
 
-<p><img src="https://raw.githubusercontent.com/parth8891/NYC_Taxi_Data_Analysis/master/Output/Images/Top_pickup_dropoff.png" alt="Top_Pickup_Dropoff_Location_Map"></p>
+<br>
+
+<table width = "100%"  border="0" >
+<tr>
+<td width = "100%">
+<iframe src="https://www.googledrive.com/host/0B3OrYOq1dVQxcjJPOW1BWnFsYzQ/DropoffLocation.html" style="border:none"  height="500px" width="100%"></iframe>
+</td>
+</tr>
+<tr>
+<td>
+<div align = "center"> Top Drop off Location</div>
+</td>
+</tr>
+</table> 
 
 <h3>
 <a id="traffic-analysis-by-the-taxi-speed" class="anchor" href="#traffic-analysis-by-the-taxi-speed" aria-hidden="true"><span class="octicon octicon-link"></span></a>Traffic analysis by the taxi speed</h3>
 
 <p>We have used basic concept of physics speed = distance /time in this analysis and derived average speed, around a particular location. We have considered the drop-off location to compute speed. After specifying the drop-off location latitude and longitude, we get the average speed of the taxi around that location for every one hour. We have applied the logic- that if the average speed is high at a particular location, it implies that traffic is less in that area.   </p>
 
-<p><img src="https://raw.githubusercontent.com/parth8891/NYC_Taxi_Data_Analysis/master/Output/Images/JFK_Speed_Analysis.png" alt="JFK_Speed_Analysis"></p>
+<p align="center"><img width="100%" src="https://raw.githubusercontent.com/parth8891/NYC_Taxi_Data_Analysis/master/Output/Images/JFK_Speed_Analysis.png" alt="JFK_Speed_Analysis"></p>
 
 <h3>
 <a id="most-hectic-hours-of-the-day" class="anchor" href="#most-hectic-hours-of-the-day" aria-hidden="true"><span class="octicon octicon-link"></span></a>Most hectic hours of the day</h3>
 
 <p>One of the outputs we derived from this analysis was average number of pickups for a day in New York and for that we rounded the pickup time by an hour and counted the number of pickups for every hour and then we just divided the final count by 180 (because our data is from 01-Jan-2015 to 30-Jun-2015 which is 180 days). Using these outputs, taxi drivers can schedule their day and hence make maximum profit in a day.   </p>
 
-<p><img src="https://raw.githubusercontent.com/parth8891/NYC_Taxi_Data_Analysis/master/Output/Images/Pickupcount_vs_hour.png" alt="Pickupcount_vs_hour">  </p>
+<p align="center"><img width="100%" src="https://raw.githubusercontent.com/parth8891/NYC_Taxi_Data_Analysis/master/Output/Images/Pickupcount_vs_hour.png" alt="Pickupcount_vs_hour">  </p>
 
 <h3>
 <a id="most-generous-area-of-new-york" class="anchor" href="#most-generous-area-of-new-york" aria-hidden="true"><span class="octicon octicon-link"></span></a>Most generous area of New York</h3>
 
 <p>As a final output, we calculated location wise, tip percentage. We counted the percentage tip given to the driver after rounding location by 3 decimal points and taking average of (tip_amount/total_amount)*100%.  </p>
 
-<p><img src="https://raw.githubusercontent.com/parth8891/NYC_Taxi_Data_Analysis/master/Output/Images/Most_Generous_Area.png" alt="Most_Generous_Area"></p>
+<p><img width="100%" src="https://raw.githubusercontent.com/parth8891/NYC_Taxi_Data_Analysis/master/Output/Images/Most_Generous_Area.png" alt="Most_Generous_Area"></p>
 
 <h2>
 <a id="hive-queries" class="anchor" href="#hive-queries" aria-hidden="true"><span class="octicon octicon-link"></span></a>HIVE Queries</h2>
