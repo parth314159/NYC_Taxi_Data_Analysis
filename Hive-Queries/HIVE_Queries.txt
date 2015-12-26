@@ -1,4 +1,4 @@
-//creating HIVE table from the data on HDFS
+//Creating HIVE table from the data on HDFS
 CREATE TABLE IF NOT EXISTS NYC_TAXI_DATA ( 
 vendorId INT, 
 pickup_time timestamp,
